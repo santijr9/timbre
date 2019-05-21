@@ -18,7 +18,7 @@ incrementar en php.ini el max_size_file_upload.
 
 Configurar apache para que se ejecute con el mismo usuario estandar del sistema, y de esta manera evitamos los problemas que tiene www-data para reproducir audio, desde el botón web de reproducción manual.
 
-descargar el fichero timbre.tar.gz y descomprimir en /var/www/html
+descargar todos los ficheros y copiarlos en /var/www/html
 
 # Permisos
 
@@ -39,11 +39,13 @@ Para ello, se escribe un número en el fichero /var/www/html/tiempo , el cual re
 
 # Planificador de tareas
 
-De manera manual, configuramos el cron, para que ejecute player.sh:
+De manera manual, configuramos el cron, para que ejecute player.sh en las horas que nos interese:
 
-* * * * * /var/www/html/player.sh /var/www/html/selected/selected.mp3
+0 8 * * * /var/www/html/player.sh /var/www/html/selected/selected.mp3
+...
+
 
 # Pendiente
 
-Interfaz de gestión de las horas a las que suena automáticamente. (Configurar el cron desde web.)
-
+- Interfaz de gestión de las horas a las que suena automáticamente. (Configurar el cron desde web.)
+- Opción de shuffle.
